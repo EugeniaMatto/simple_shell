@@ -16,7 +16,7 @@ void eexit(char **argv, char *buffer, char *command)
 		if (exitstatus <= 0)
 		{
 			perror(argv[1]);
-			exit(-1);
+			return;
 		}
 	}
 	freeMatrix(argv);
