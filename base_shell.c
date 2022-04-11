@@ -18,8 +18,7 @@ char *base_shell(char *buffer, char **av, char **env, int mode, char *command)
 	buffer[chars - 1] = '\0';
 	while (chars > i && commit == 0)
 	{
-		if ((buffer[i + 1] == ';' && buffer[i + 2] == ';')
-				|| (buffer[i] == ';' && buffer[i + 1] == ';'))
+		if (buffer[i + 1] == ';' && buffer[i + 2] == ';')
 		{
 			printf("%s: 1: Syntax error: \";;\" unexpected\n", av[0]);
 			break;
