@@ -40,11 +40,13 @@ char *base_shell(char *buffer, char **av, char **env, int mode, char *command)
 		}
 		else if (buffer[i] != ';')
 		{
-			command[j] = buffer[i];
+			if (buffer[i] == 9)
+				command[j] = ' ';
+			else
+				command[j] = buffer[i];
 			j++;
 		}
 		i++;
 	}
-
 	return (buffer);
 }
