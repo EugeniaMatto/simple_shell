@@ -10,6 +10,8 @@
 #include <signal.h>
 #include <sys/stat.h>
 
+#define EXITSTATUS 0
+
 char *_strdup(char *str);
 int *printENV(char **env, char **argv);
 void sig_ctrl(int c);
@@ -23,7 +25,7 @@ int _atoi(char *s);
 int freeMatrix(char **mat);
 void _execute_command(char *command, char *buffer, char **av, char **env);
 char *base_shell(char *buffer, char **av, char **env, int mode, char *command);
-void eexit(char **argv, char *buffer, char *command);
+void eexit(char **av, char **argv, char *buffer, char *command);
 void _noline(char *buffer, char *command, int mode);
 
 #endif
