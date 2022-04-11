@@ -16,7 +16,7 @@ int main(int __attribute__((unused)) ac, char **av, char **env)
 		exit(1);
 	command = malloc(sizeof(char) * (buffsize));
 	if (command == NULL)
-		exit (1);
+		exit(1);
 
 	signal(SIGINT, sig_ctrl);
 
