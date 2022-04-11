@@ -20,7 +20,7 @@ void _execute_command(char *command, char *buffer, char **av, char **env)
 	}
 	if (argv[0][0]  == '.' && argv[0][1] == '/')
 	{
-		printf("%s: 1: %s: not found\n", av[0], argv[0]);
+		/*printf("%s: 1: %s: not found\n", av[0], argv[0]);*/
 		return;
 	}
 	if (argv[0][0] != '/')
