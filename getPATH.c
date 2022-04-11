@@ -9,14 +9,8 @@ char *getPATH(char *command, char **env)
 {
 	char *s = getENV(env, "PATH");
 	char *actual = malloc(1024);
-	int i = 0, letras = 0, j = 0, paths = 0;
-
-	while (s[i] != '\0')
-	{
-		if (s[i] == ':')
-			paths++;
-		i++;
-	}
+	int i = 0, j = 0, letras = 0;
+	int paths = cont_paths(s);
 
 	i = 5; /* PATH=/bin... */
 	while (paths > 0)

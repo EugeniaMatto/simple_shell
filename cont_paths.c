@@ -15,7 +15,11 @@ int cont_paths(char *s)
 	while (s[i])
 	{
 		if (s[i] == ':')
+		{
 			paths++;
+		}
 		i++;
 	}
+
+	return (paths);
 }
