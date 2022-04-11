@@ -17,19 +17,11 @@ int main(int __attribute__((unused)) ac, char **av, char **env)
 
 	signal(SIGINT, sig_ctrl);
 
-	if (isatty(STDIN_FILENO) == 1)
-	{
 		while (1)
 		{
 			write(STDIN_FILENO, "$ ", 2);
 			buffer = base_shell(buffer, av, env, 1);
 		}
-	}
-	else
-	{
-		write(STDIN_FILENO, "$ ", 2);
-		buffer = base_shell(buffer, av, env, 0);
-	}
 
 	free(buffer);
 	return (0);
