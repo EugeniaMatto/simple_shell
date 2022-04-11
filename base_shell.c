@@ -31,7 +31,7 @@ char *base_shell(char *buffer, char **av, char **env, int mode, char *command)
 					notSpace = 1;
 				j++;
 			}
-			if (notSpace == 1 && (!(buffer[0] == '.' && buffer[1] == '/')))
+			if (notSpace == 1)
 				_execute_command(command, buffer, av, env);
 			j = 0;
 			if (buffer[i + 1] == '#')
