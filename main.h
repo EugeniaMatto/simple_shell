@@ -27,5 +27,6 @@ char *base_shell(char *buffer, char **av, char **env, int mode, char *command);
 void eexit(char **av, char **argv, char *buffer, char *command);
 void _noline(char *buffer, char *command, int mode);
 int no_letter(char *str);
+void child_process(char **av, char **argv, **env);
 
 #endif
