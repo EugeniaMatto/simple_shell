@@ -10,7 +10,7 @@
  */
 char *base_shell(char *buffer, char **av, char **env, int mode, char *command)
 {
-	size_t chars = 0, buffsize = 1024, notSpace = 0, i = 0, j = 0, commit = 0;
+	size_t chars = 0, buffsize = 1024, i = 0, j = 0, commit = 0;
 
 	chars = getline(&buffer, &buffsize, stdin);
 	if (chars == (size_t) -1)
@@ -30,15 +30,7 @@ char *base_shell(char *buffer, char **av, char **env, int mode, char *command)
 		{
 			command[j] = buffer[i];
 			command[j + 1] = '\0';
-			j = 0;
-			notSpace = 0;
-			while (command[j])
-			{
-				if (command[j] != ' ')
-					notSpace = 1;
-				j++;
-			}
-			if (notSpace == 1)
+			if (no_letter(command) == 1)
 				_execute_command(command, buffer, av, env);
 			j = 0;
 			if (buffer[i + 1] == '#')
