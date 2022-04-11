@@ -76,6 +76,6 @@ The aim of this project was to mirror how the real shell (sh) works using a cust
 -   `write`  (man 2 write)
 
 ## ***Usage example***
-![image](https://drive.google.com/file/d/12NnjYsHjVl55VDJ-Tiru9aLHaVhh0Bvd/view?usp=sharing)
+![alt text](https://drive.google.com/file/d/12NnjYsHjVl55VDJ-Tiru9aLHaVhh0Bvd/view?usp=sharing)
  ## ***Authors***
   [Maria Eugenia Matto](https://www.linkedin.com/in/maria-matto/), [Franco Trenche](https://www.linkedin.com/in/franco-trenche-375a33209/?originalSubdomain=uy)
