@@ -37,7 +37,7 @@ void _execute_command(char *command, char *buffer, char **av, char **env)
 			perror(av[0]);
 		if (pid_child == 0)
 		{
-			if (execve(argv[0], argv, env) == -1)
+			if (execve(argv[0], argv, NULL) == -1)
 				perror(av[0]);
 		}
 		else
