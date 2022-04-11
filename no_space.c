@@ -5,7 +5,7 @@
  * @str: string to compare
  * Return: 0 if the string is only spaces, 1 if has letters
  */
-int no_letter(*str)
+int no_letter(char *str)
 {
 	int i = 0, flag = 0;
 
