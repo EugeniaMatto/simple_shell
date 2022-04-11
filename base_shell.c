@@ -16,7 +16,7 @@ char *base_shell(char *buffer, char **av, char **env, int mode, char *command)
 	if (chars == (size_t) -1)
 		_noline(buffer, command, mode);
 	buffer[chars - 1] = '\0';
-	while (chars > i && commit == 0)
+	while (chars > i && commit == 0 && (no_letter(buffer) == 1))
 	{
 		if ((buffer[i] == ';' && buffer[i + 1] == ';') ||
 	(buffer[i] == ';' && buffer[i + 1] == ';'))
