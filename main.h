@@ -1,6 +1,5 @@
 #ifndef MAIN_H
 #define MAIN_H
-#define EXITCMD "exit"
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
