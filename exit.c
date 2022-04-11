@@ -16,14 +16,13 @@ void eexit(char **argv, char *buffer, char *command)
 		if (exitstatus <= 0)
 		{
 			perror(argv[1]);
-			return;
+			exit(-1);
 		}
 	}
-	if (argv[1] == NULL)
-		exitstatus = 2;
-
 	freeMatrix(argv);
 	free(buffer);
 	free(command);
+	if (argv[1] == NULL)
+		exit(2);
 	exit(exitstatus);
 }
