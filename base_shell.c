@@ -4,9 +4,10 @@
  * @buffer: buffer
  * @av: arguments array
  * @env: env variables
+ * @mode: interactive or non
  * Return: pointer to first char of the buffer
  */
-char *base_shell(char *buffer, char **av, char **env)
+char *base_shell(char *buffer, char **av, char **env, int mode)
 {
 	size_t chars = 0, buffsize = 1024;
 	int notSpace = 0, i = 0, j = 0, commit = 0;
@@ -14,7 +15,7 @@ char *base_shell(char *buffer, char **av, char **env)
 
 	chars = getline(&buffer, &buffsize, stdin);
 	if (chars == (size_t) -1)
-		_noline(buffer);
+		_noline(buffer, mode);
 	buffer[chars - 1] = '\0';
 	while ((int) chars > i && commit == 0)
 	{

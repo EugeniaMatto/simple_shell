@@ -8,11 +8,8 @@
  */
 int main(int __attribute__((unused)) ac, char **av, char **env)
 {
-	char *buffer, mode = 0; /* 0 non-interactive / 1 interactive */
+	char *buffer;  /* 0 non-interactive / 1 interactive */
 	int buffsize = 1024;
-
-	if (isatty(STDIN_FILENO))
-		mode = 1;
 
 	buffer = malloc(sizeof(char) * (buffsize));
 	if (buffer == NULL)
@@ -20,11 +17,18 @@ int main(int __attribute__((unused)) ac, char **av, char **env)
 
 	signal(SIGINT, sig_ctrl);
 
-	while (1)
+	if (isatty(STDIN_FILENO) == 1)
 	{
-		if (mode == 1)
-			write(STDIN_FILENO, "#cisfun$ ", 9);
-		buffer = base_shell(buffer, av, env);
+		while (1)
+		{
+			write(STDIN_FILENO, "$ ", 2);
+			buffer = base_shell(buffer, av, env, 1);
+		}
+	}
+	else
+	{
+		write(STDIN_FILENO, "$ ", 2);
+		buffer = base_shell(buffer, av, env, 0);
 	}
 
 	free(buffer);

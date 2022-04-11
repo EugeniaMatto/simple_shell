@@ -6,8 +6,10 @@
  *
  * Return: void
  */
-void _noline(char *buffer)
+void _noline(char *buffer, int mode)
 {
+	if (mode == 1)
+		printf("\n");
 	free(buffer);
 	exit(0);
 
