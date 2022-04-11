@@ -8,7 +8,7 @@
  */
 void eexit(char **argv, char *buffer, char *command)
 {
-	int exitstatus = 2;
+	int exitstatus = 0;
 
 	if (argv[1] != NULL)
 	{
@@ -19,6 +19,9 @@ void eexit(char **argv, char *buffer, char *command)
 			return;
 		}
 	}
+	if (argv[1] == NULL)
+		exitstatus = 2;
+
 	freeMatrix(argv);
 	free(buffer);
 	free(command);
