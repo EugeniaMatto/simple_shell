@@ -14,7 +14,7 @@ void _execute_command(char *command, char *buffer, char **av, char **env)
 	pid_t pid_child = -1;
 
 	if (_strcmp("exit", argv[0]) == 0)
-		eexit(av, argv, buffer, command);
+		eexit(argv, buffer, command);
 	if (_strcmp("env", argv[0]) == 0)
 	{
 		printENV(env, argv);
