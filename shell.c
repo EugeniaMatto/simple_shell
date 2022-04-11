@@ -23,7 +23,7 @@ int main(int __attribute__((unused)) ac, char **av, char **env)
 	while (1)
 	{
 		if (mode == 1)
-			printf("#cisfun$ ");
+			write(STDIN_FILENO, "#cisfun$ ", 9);
 		buffer = base_shell(buffer, av, env);
 	}
 

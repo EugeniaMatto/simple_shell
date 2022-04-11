@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include<signal.h>
+#include <signal.h>
 #include <sys/stat.h>
 
 char *_strdup(char *str);
