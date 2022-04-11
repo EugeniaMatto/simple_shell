@@ -26,8 +26,6 @@ char *getPATH(char *command, char **env)
 			j = 0;
 			actual[letras] = '/';
 			letras++;
-			if (command[0] == '.')
-				letras++;
 			while (command[j])
 			{
 				actual[letras] = command[j];
