@@ -6,6 +6,6 @@
  */
 void sig_ctrl(__attribute__((unused)) int c)
 {
-		write(STDIN_FILENO, "\n#cisfun$ ", 10);
+		write(STDIN_FILENO, "\n$ ", 3);
 		signal(SIGINT, sig_ctrl);
 }
