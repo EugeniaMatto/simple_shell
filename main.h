@@ -24,7 +24,6 @@ int freeMatrix(char **mat);
 void _execute_command(char *command, char *buffer, char **av, char **env);
 char *base_shell(char *buffer, char **av, char **env, int mode, char *command);
 void eexit(char **argv, char *buffer, char *command);
-void _noline(char *buffer, int mode);
-
+void _noline(char *buffer, char *command, int mode);
 
 #endif

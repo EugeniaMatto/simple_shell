@@ -6,11 +6,12 @@
  *
  * Return: void
  */
-void _noline(char *buffer, int mode)
+void _noline(char *buffer, char *command, int mode)
 {
 	if (mode == 1)
 		printf("\n");
 	free(buffer);
+	free(command);
 	exit(0);
 
 }

@@ -14,7 +14,7 @@ char *base_shell(char *buffer, char **av, char **env, int mode, char *command)
 
 	chars = getline(&buffer, &buffsize, stdin);
 	if (chars == (size_t) -1)
-		_noline(buffer, mode);
+		_noline(buffer, command, mode);
 	buffer[chars - 1] = '\0';
 	while ((int) chars > i && commit == 0)
 	{
