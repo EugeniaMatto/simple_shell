@@ -8,7 +8,7 @@
  */
 void eexit(char **argv, char *buffer, char *command)
 {
-	int exitstatus = 0;
+	int exitstatus = 2;
 
 	if (argv[1] != NULL)
 	{
