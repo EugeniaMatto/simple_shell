@@ -2,6 +2,7 @@
 /**
  * base_shell - shell inside loop content
  * @buffer: buffer
+ * @command: command
  * @av: arguments array
  * @env: env variables
  * @mode: interactive or non
@@ -9,16 +10,13 @@
  */
 char *base_shell(char *buffer, char **av, char **env, int mode, char *command)
 {
-	size_t chars = 0, buffsize = 1024;
-	int notSpace = 0, i = 0, j = 0, commit = 0;
+	size_t chars = 0, buffsize = 1024, notSpace = 0, i = 0, j = 0, commit = 0;
 
 	chars = getline(&buffer, &buffsize, stdin);
 	if (chars == (size_t) -1)
 		_noline(buffer, command, mode);
 	buffer[chars - 1] = '\0';
-	if (buffer[0] == '.')
-		return (buffer);
-	while ((int) chars > i && commit == 0)
+	while (chars > i && commit == 0)
 	{
 		if (buffer[i + 1] == '\0' || buffer[i + 1] == ';'
 				|| buffer[i + 1] == '#')
@@ -33,7 +31,7 @@ char *base_shell(char *buffer, char **av, char **env, int mode, char *command)
 					notSpace = 1;
 				j++;
 			}
-			if (notSpace == 1)
+			if (notSpace == 1 && (!(buffer[0] == '.' && buffer[1] == '/')))
 				_execute_command(command, buffer, av, env);
 			j = 0;
 			if (buffer[i + 1] == '#')

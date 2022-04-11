@@ -4,7 +4,7 @@
  * @command: command
  * @buffer: line
  * @argv: arguments array
- * @av: av 
+ * @av: av
  * Return: nothing
  */
 void eexit(char **av, char **argv, char *buffer, char *command)
@@ -16,7 +16,7 @@ void eexit(char **av, char **argv, char *buffer, char *command)
 		freeMatrix(argv);
 		free(buffer);
 		free(command);
-		exit(0);	
+		exit(0);
 	}
 
 	if (argv[1] != NULL)
