@@ -7,14 +7,15 @@
  * @mode: interactive or non
  * Return: pointer to first char of the buffer
  */
-char *base_shell(char *buffer, char **av, char **env, int mode, char *command)
+char *base_shell(char *buffer, char **av, char **env, int mode)
 {
 	size_t chars = 0, buffsize = 1024;
 	int notSpace = 0, i = 0, j = 0, commit = 0;
+	char *command = malloc(1024);
 
 	chars = getline(&buffer, &buffsize, stdin);
 	if (chars == (size_t) -1)
-		_noline(buffer, command, mode);
+		_noline(buffer, mode);
 	buffer[chars - 1] = '\0';
 	while ((int) chars > i && commit == 0)
 	{
@@ -46,5 +47,6 @@ char *base_shell(char *buffer, char **av, char **env, int mode, char *command)
 		i++;
 	}
 
+	free(command);
 	return (buffer);
 }

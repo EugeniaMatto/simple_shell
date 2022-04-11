@@ -22,8 +22,9 @@ char *getENV(char **env, char *var);
 int _atoi(char *s);
 int freeMatrix(char **mat);
 void _execute_command(char *command, char *buffer, char **av, char **env);
-char *base_shell(char *buffer, char **av, char **env, int mode, char *command);
+char *base_shell(char *buffer, char **av, char **env, int mode);
 void eexit(char **argv, char *buffer, char *command);
-void _noline(char *buffer, char *command, int mode);
+void _noline(char *buffer, int mode);
+
 
 #endif
