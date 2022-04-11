@@ -10,8 +10,6 @@
 void _execute_command(char *command, char *buffer, char **av, char **env)
 {
 	char **argv = strtow(command), *aux;
-	int status = 0;
-	pid_t pid_child = -1;
 
 	if (_strcmp("exit", argv[0]) == 0)
 		eexit(av, argv, buffer, command);
@@ -36,21 +34,7 @@ void _execute_command(char *command, char *buffer, char **av, char **env)
 		}
 	}
 	if (exists(argv[0]) == 0)
-	{
-		pid_child = fork();
-		if (pid_child == -1)
-			perror(av[0]);
-		if (pid_child == 0)
-		{
-			if (execve(argv[0], argv, env) == -1)
-				perror(av[0]);
-		}
-		else
-		{
-			if (waitpid(-1, &status, 0) == -1)
-				perror(av[0]);
-		}
-	}
+		child_process(av, argv, env);
 	else
 		perror(av[0]);
 	freeMatrix(argv);
