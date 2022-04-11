@@ -31,7 +31,10 @@ int main(int __attribute__((unused)) ac, char **av, char **env)
 	else
 	{
 		write(STDIN_FILENO, "$ ", 2);
-		buffer = base_shell(buffer, av, env, 0, command);
+		while (1)
+		{
+			buffer = base_shell(buffer, av, env, 0, command);
+		}
 	}
 
 	free(buffer);
