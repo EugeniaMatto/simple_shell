@@ -21,10 +21,10 @@ char *base_shell(char *buffer, char **av, char **env, int mode, char *command)
 		if ((buffer[i] == ';' && buffer[i + 1] == ';') ||
 	(buffer[i] == ';' && buffer[i + 1] == ';'))
 		{
-			printf("%s: 1: Syntax error: \";;\" unexpected\n", av[0]);
+			printf("%s: 1: Syntax error: \"%c%c\" unexpected\n", av[0], ';', ';');
 			return (buffer);
-		}	
-		
+		}
+
 		if (buffer[i + 1] == '\0' || buffer[i + 1] == ';'
 				|| buffer[i + 1] == '#')
 		{
