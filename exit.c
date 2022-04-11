@@ -22,7 +22,5 @@ void eexit(char **argv, char *buffer, char *command)
 	freeMatrix(argv);
 	free(buffer);
 	free(command);
-	if (argv[1] == NULL)
-		exit(2);
 	exit(exitstatus);
 }
