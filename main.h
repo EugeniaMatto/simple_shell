@@ -10,7 +10,6 @@
 #include <signal.h>
 #include <sys/stat.h>
 
-#define EXITSTATUS 0
 
 char *_strdup(char *str);
 int *printENV(char **env, char **argv);

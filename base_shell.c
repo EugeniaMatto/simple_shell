@@ -16,6 +16,8 @@ char *base_shell(char *buffer, char **av, char **env, int mode, char *command)
 	if (chars == (size_t) -1)
 		_noline(buffer, command, mode);
 	buffer[chars - 1] = '\0';
+	if (buffer[0] == '.')
+		return (buffer);
 	while ((int) chars > i && commit == 0)
 	{
 		if (buffer[i + 1] == '\0' || buffer[i + 1] == ';'
