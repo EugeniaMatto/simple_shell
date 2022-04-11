@@ -27,8 +27,8 @@ int main(int __attribute__((unused)) ac, char **av, char **env)
 	}
 	else
 	{
-		while (1)
-			buffer = base_shell(buffer, av, env, 0);
+		write(STDIN_FILENO, "$ ", 2);
+		buffer = base_shell(buffer, av, env, 0);
 	}
 
 	free(buffer);
