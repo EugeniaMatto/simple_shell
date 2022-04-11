@@ -7,7 +7,7 @@
  * @env: env
  * Return: nothing
  */
-void child_process(char **av, char **argv, **env)
+void child_process(char **av, char **argv, char **env)
 {
 	int status = 0;
 	pid_t pid_child = -1;
@@ -19,13 +19,13 @@ void child_process(char **av, char **argv, **env)
 
 	if (pid_child == 0)
 	{
-		if (execv(argv[0], argv, env) == -1)
+		if (execve(argv[0], argv, env) == -1)
 			perror(av[0]);
 	}
 	else
 	{
 		if (waitpid(-1, &status, 0) == -1)
-			perror(av[0];
+			perror(av[0]);
 	}
 
 }
