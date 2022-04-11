@@ -7,15 +7,14 @@
  * @env: env variables
  * Return: nothing (executes the command and sends it to stdin)
  */
-void _execute_command(char *command, char *buffer, char **av, char **env,
-	   	int mode)
+void _execute_command(char *command, char *buffer, char **av, char **env)
 {
 	char **argv = strtow(command), *aux;
 	int status = 0;
 	pid_t pid_child = -1;
 
 	if (_strcmp("exit", argv[0]) == 0)
-		eexit(argv, buffer, command, mode);
+		eexit(argv, buffer, command);
 	if (_strcmp("env", argv[0]) == 0)
 	{
 		printENV(env, argv);

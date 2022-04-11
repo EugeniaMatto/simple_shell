@@ -33,7 +33,7 @@ char *base_shell(char *buffer, char **av, char **env, int mode)
 				j++;
 			}
 			if (notSpace == 1)
-				_execute_command(command, buffer, av, env, mode);
+				_execute_command(command, buffer, av, env);
 			j = 0;
 			if (buffer[i + 1] == '#')
 				commit = 1;

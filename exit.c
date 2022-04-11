@@ -6,15 +6,9 @@
  * @argv: arguments array
  * Return: nothing
  */
-void eexit(char **argv, char *buffer, char *command, int mode)
+void eexit(char **argv, char *buffer, char *command)
 {
 	int exitstatus = 0;
-
-	if (mode == 0)
-	{
-		write(STDIN_FILENO, "$ ", 2);
-		exit(0);
-	}
 
 	if (argv[1] != NULL)
 	{
