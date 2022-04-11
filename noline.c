@@ -3,7 +3,7 @@
 /**
  * _noline - function that handles error of getline() == -1
  * @buffer: buffer
- *
+ * @mode: mode
  * Return: void
  */
 void _noline(char *buffer, int mode)
