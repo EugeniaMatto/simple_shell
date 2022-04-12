@@ -10,11 +10,11 @@ char *getENV(char **env, char *var)
 {
 	int i = 0, j = 0, es = 0;
 	char *s = _strdup(var);
-	
+
 	if (env == NULL)
 	{
 		perror(NULL);
-		return(NULL);
+		return (NULL);
 	}
 	while (env[i])
 	{
