@@ -16,35 +16,38 @@ The aim of this project was to mirror how the real shell (sh) works using a cust
  -  Executes any command with its arguments using relative or absolute routes
  - Executes built-in commands
  - Handles ';' command seperator
- - Handles the “end of file” condition (`Ctrl+D`)
+ - Handles the "end of file" condition (`Ctrl+D`)
  - Handles errors
  - Handles the  `PATH`
- - Handles `exit`[arguments] built-in 
+ - Handles `exit`[arguments] built-in
  - `env` built-in implemented
  -  Handles `Ctrl+C`
  -  Handles comments (`#`)
  - Handles interactive mode
  - Handles non-interactive mode
 ## *File contents*
--   **AUTHORS**   List of contributors 
--   **man_1_simple_shell**   Manual page of the simple_shell
--  **main.h** Header file
--  **main.c**
--  **base_shell.c**
--  **getPATH.c**
--  **getPathENV.c**
--  **exists.c**
--  **exit.c**
--  **execute_command.c**
--  **noline.c**
--  **printENV.c**
--  **sig_ctrl.c**
--  **freeMatrix.c**
--  **atoi.c**
--  **strcmp.c**
--  **strdup.c**
--  **strlen.c**
--  **strtow.c**
+-   **AUTHORS** -> List of contributors
+-   **man_1_simple_shell** -> Manual page of the simple_shell
+-  **main.h** -> Header file
+-  **shell.c** -> Contains the main function, here we differentiate between interactive and non-interactive mode.
+-  **base_shell.c** -> Contains the body of our shell, it executes in a loop until there are no more lines to read or "exit" is read.
+-  **getPATH.c** -> Function to obtain a specific command path.
+-  **getENV.c** -> Function to obtain an environment variable.
+-  **exists.c** -> Function that asks for a path and returns 0 if a file exists.
+-  **exit.c** -> Function to exit the shell, with or without arguments.
+-  **execute_command.c** -> Function that executes a received command.
+-  **noline.c** -> Function that handles EOF.
+-  **printENV.c** -> Function that prints env variables.
+-  **sig_ctrl.c** -> Function that handles Ctrl + C.
+-  **freeMatrix.c** -> Function that frees a 2D array.
+-  **child_process.c** -> Function that executes fork.
+-  **cont_paths.c** -> Function to count the number of paths inside env variable $PATH.
+-  **no_letters.c** -> Function to verify if a string has at least one space (' ');
+-  **atoi.c** -> Our own version of atoi library function.
+-  **strcmp.c** -> Our own version of strcmp library function.
+-  **strdup.c** -> Our own version of strdup library function.
+-  **strlen.c** -> Our own version of strlen library function.
+-  **strtow.c** -> Our own version of strtok library function.
 ## *List of allowed functions and system calls*
 -   `access`  (man 2 access)
 -   `chdir`  (man 2 chdir)
