@@ -10,7 +10,6 @@
 #include <signal.h>
 #include <sys/stat.h>
 
-
 char *_strdup(char *str);
 int *printENV(char **env, char **argv);
 void sig_ctrl(int c);
@@ -29,5 +28,6 @@ void _noline(char *buffer, char *command, int mode);
 int no_letter(char *str);
 void child_process(char **av, char **argv, char **env);
 int cont_paths(char *s);
+void sets(char **argv);
 
 #endif

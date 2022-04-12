@@ -23,6 +23,11 @@ void _execute_command(char *command, char *buffer, char **av, char **env)
 		printf("%d\n",getpid());
 		return;
 	}
+	if((_strcmp("setenv", argv[0]) == 0) || (_strcmp("setenv", argv[0]) == 0))
+        {
+                sets(argv);
+                return;
+        }
 	if (argv[0][0] != '/')
 	{
 		aux = getPATH(argv[0], env);
