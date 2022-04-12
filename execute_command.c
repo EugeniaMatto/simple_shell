@@ -18,9 +18,9 @@ void _execute_command(char *command, char *buffer, char **av, char **env)
 		printENV(env, argv);
 		return;
 	}
-	if(_strcmp("$$", argv[0]) == 0)
+	if (_strcmp("$$", argv[0]) == 0)
 	{
-		printf("%d\n",getpid());
+		printf("%d\n", getpid());
 		return;
 	}
 	if (argv[0][0] != '/')
