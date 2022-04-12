@@ -28,6 +28,5 @@ void _noline(char *buffer, char *command, int mode);
 int no_letter(char *str);
 void child_process(char **av, char **argv, char **env);
 int cont_paths(char *s);
-void sets(char **argv);
 
 #endif
