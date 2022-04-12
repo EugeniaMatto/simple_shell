@@ -20,6 +20,8 @@ int cont_paths(char *s)
 		}
 		i++;
 	}
+	if (paths == 0)
+		perror(NULL);
 
 	return (paths);
 }
