@@ -81,6 +81,7 @@ The aim of this project was to mirror how the real shell (sh) works using a cust
 ## ***Usage example***
 ### *After cloning this repo and compiling using:*
 ```gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh```
+-----
 ![Get4KZ0 - Imgur](https://user-images.githubusercontent.com/98403340/162850636-6263021a-7ba1-4a0e-bf0b-aec4dc29f32e.png)
 
  ## ***Authors***
