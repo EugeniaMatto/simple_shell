@@ -13,7 +13,7 @@ char *getPATH(char *command, char **env)
 	int paths = cont_paths(s);
 
 	i = 5; /* PATH=/bin... */
-	while (paths > 0)
+	while (paths > 0 && s != NULL)
 	{
 		if (s[i] == ':')
 		{

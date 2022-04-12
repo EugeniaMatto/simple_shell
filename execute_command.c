@@ -20,7 +20,7 @@ void _execute_command(char *command, char *buffer, char **av, char **env)
 	}
 	if(_strcmp("$$", argv[0]) == 0)
 	{
-		printf("%d\n",getppid());
+		printf("%d\n",getpid());
 		return;
 	}
 	if (argv[0][0] != '/')
