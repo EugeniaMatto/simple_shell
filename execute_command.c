@@ -18,6 +18,11 @@ void _execute_command(char *command, char *buffer, char **av, char **env)
 		printENV(env, argv);
 		return;
 	}
+	if(_strcmp("$$", argv[0]) == 0)
+	{
+		printf("%d\n",getppid());
+		return;
+	}
 	if (argv[0][0] != '/')
 	{
 		aux = getPATH(argv[0], env);
